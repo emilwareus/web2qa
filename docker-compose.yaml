@@ -1,0 +1,17 @@
+version: "3"
+services:
+  elasticsearch:
+    image: elasticsearch:8.2.2
+    ports:
+      - 9200:9200
+    restart: on-failure
+    environment:
+      - discovery.type=single-node
+  
+  web2qa-api:
+    container_name: web2qa-api
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - 8000:8000
