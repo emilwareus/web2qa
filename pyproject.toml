@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "web2qa"
+version = "0.1.0"
+description = "Answere queries with your web content"
+authors = ["Emil Wåreus <emil.wareus47@gmail.com>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.78.0"
+celery = "^5.2.7"
+farm-haystack = {extras = ["crawler"], version = "^1.5.0"}
+uvicorn = "^0.17.6"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+api = "web2qa.api:start_dev"
